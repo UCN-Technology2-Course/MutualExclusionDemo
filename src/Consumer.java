@@ -21,16 +21,13 @@ public class Consumer extends Thread {
 			
 			try {
 
-				Thread.sleep((long) (Math.random() * 3001));
+				sum += this.storage.getValue();
 
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
-			}
-			
-			sum += this.storage.getValue();			
-		}
-		
+			}						
+		}		
 		System.out.println("Done consuming values, total sum: " + sum);
 	}
 }
