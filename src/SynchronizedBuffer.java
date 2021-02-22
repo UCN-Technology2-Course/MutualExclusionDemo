@@ -1,4 +1,4 @@
-
+// Implementation of a synchronized buffer
 public class SynchronizedBuffer implements Bufferable {
 
 	private int value = 0;
@@ -15,7 +15,6 @@ public class SynchronizedBuffer implements Bufferable {
 		System.out.println(Thread.currentThread().getName() + " thread sets value " + this.value);
 
 		notify();
-
 	}
 
 	public synchronized int getValue() throws InterruptedException {
@@ -33,7 +32,6 @@ public class SynchronizedBuffer implements Bufferable {
 		notify();
 
 		return res;
-
 	}
 
 }
