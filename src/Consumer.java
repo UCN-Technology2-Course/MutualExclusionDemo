@@ -21,7 +21,9 @@ public class Consumer extends Thread {
 			
 			try {
 
-				sum += this.storage.getValue();
+				int res = this.storage.getValue();
+				System.out.println("Consumed value " + res);
+				sum += res;
 
 			} catch (InterruptedException e) {
 

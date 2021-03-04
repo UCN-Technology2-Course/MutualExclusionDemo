@@ -22,13 +22,14 @@ public class Producer extends Thread {
 
 			try {
 
-				this.storage.setValue(v);
+				int res = this.storage.setValue(v);
+				System.out.println("Produced value " + res);
+				total += res;
 
 			} catch (InterruptedException e) {
 
 				e.printStackTrace();
 			}
-			total += v;
 		}
 		System.out.println("Done producing values that sums to: " + total);
 	}
