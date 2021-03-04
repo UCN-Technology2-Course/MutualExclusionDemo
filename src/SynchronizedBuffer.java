@@ -1,6 +1,7 @@
 // Implementation of a synchronized buffer
 public class SynchronizedBuffer implements Bufferable {
 
+
 	private int value = 0;
 
 	public synchronized int setValue(int value) throws InterruptedException {
@@ -16,7 +17,8 @@ public class SynchronizedBuffer implements Bufferable {
 
 		notify();
 		
-		return this.value;
+		return this.value;	
+	
 	}
 
 	public synchronized int getValue() throws InterruptedException {

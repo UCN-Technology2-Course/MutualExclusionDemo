@@ -18,7 +18,7 @@ public class UnsynchronizedBuffer implements Bufferable {
 	public int getValue() throws InterruptedException {
 		Thread.sleep((long) (Math.random() * 3001));
 
-		System.out.println(Thread.currentThread().getName() + " thread reads value " + this.value);
+		//System.out.println(Thread.currentThread().getName() + " thread reads value " + this.value);
 
 		int res = this.value;
 		this.value = 0;
