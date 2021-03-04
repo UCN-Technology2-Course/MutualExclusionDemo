@@ -3,7 +3,7 @@ public class SynchronizedBuffer implements Bufferable {
 
 	private int value = 0;
 
-	public synchronized void setValue(int value) throws InterruptedException {
+	public synchronized int setValue(int value) throws InterruptedException {
 
 		Thread.sleep((long) (Math.random() * 3001));
 
@@ -15,6 +15,8 @@ public class SynchronizedBuffer implements Bufferable {
 		System.out.println(Thread.currentThread().getName() + " thread sets value " + this.value);
 
 		notify();
+		
+		return this.value;
 	}
 
 	public synchronized int getValue() throws InterruptedException {
