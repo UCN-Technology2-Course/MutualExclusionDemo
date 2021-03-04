@@ -2,6 +2,11 @@
 public class Buffer {
 
 	private int value = 0;
+	private static Object mutex = new Object();
+	
+	// synchronize(mutex){ ... }
+	// wait();
+	// notify();
 
 	public int setValue(int value) throws InterruptedException {
 		Thread.sleep((long) (Math.random() * 3001));
