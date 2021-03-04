@@ -7,9 +7,11 @@ public class UnsynchronizedBuffer implements Bufferable {
 	public int setValue(int value) throws InterruptedException {
 		Thread.sleep((long) (Math.random() * 3001));
 
-		this.value = value;
-		System.out.println(Thread.currentThread().getName() + " thread sets value " + this.value);
-		return this.value;
+		if (this.value == 0) {
+			this.value = value;
+			return this.value;
+		}
+		return 0;
 	}
 
 	@Override
